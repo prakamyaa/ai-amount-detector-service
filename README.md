@@ -137,6 +137,8 @@ curl -X POST http://127.0.0.1:8000/v1/amounts/extract -F "currency_hint=INR"
 ```
 
 ---
+### Image File 
+![Test Output Screenshot](https://raw.githubusercontent.com/prakamyaa/ai-amount-detector-service/main/ChatGPT%20Image%20Oct%204%2C%202025%2C%2004_27_36%20PM.png)
 
 ## ⏭️ Future Improvements (Extending the Solution)
 - **Machine Learning (ML) Upgrade:** Replace the rule-based classifier with a transformer model (e.g., LayoutLM) trained on SROIE or CORD for higher accuracy in classification.
