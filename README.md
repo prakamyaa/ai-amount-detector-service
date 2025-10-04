@@ -104,7 +104,28 @@ curl -X POST http://127.0.0.1:8000/v1/amounts/extract -F "file=@./receipt.jpg" -
 }
 ```
 
-### Example 3: Missing Input Guardrail
+### Example 3:Inconsistent Input
+```bash
+curl -X POST http://127.0.0.1:8000/v1/amounts/extract \
+-F "text=Total: 1501 | Paid: 1250 | Due: 250" \
+-F "currency_hint=INR"
+```
+**Expected Output:**
+```json
+"confidence": 0.97,
+  "currency": "INR",
+  "amounts": [
+    {"type": "total_bill", "value": 1501.0, "source": "Total: 1501"},
+    {"type": "paid", "value": 1250.0, "source": "Paid: 1250"},
+    {"type": "due", "value": 250.0, "source": "Due: 250"},
+    {"type": "validation_error", "value": 1.0, "source": "Inconsistency: Total (1501.0) != Paid (1250.0) + Due (250.0)"}
+  ],
+  "validation_status": "validation_inconsistent",
+  "status": "ok"
+```
+
+
+### Example 4: Missing Input Guardrail
 ```bash
 curl -X POST http://127.0.0.1:8000/v1/amounts/extract -F "currency_hint=INR"
 ```
