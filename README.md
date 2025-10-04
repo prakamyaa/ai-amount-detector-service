@@ -139,6 +139,7 @@ curl -X POST http://127.0.0.1:8000/v1/amounts/extract -F "currency_hint=INR"
 ---
 ### Output
 ![Test Output Screenshot](https://github.com/prakamyaa/ai-amount-detector-service/blob/ac5261fd4d06a3521c2413b2fca3532bc0e00605/WhatsApp%20Image%202025-10-04%20at%2017.33.57.jpeg)
+![Test Output Screenshot]()
 
 ### Image File 
 ![Test Output Screenshot](https://raw.githubusercontent.com/prakamyaa/ai-amount-detector-service/main/ChatGPT%20Image%20Oct%204%2C%202025%2C%2004_27_36%20PM.png)
